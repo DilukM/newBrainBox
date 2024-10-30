@@ -9,19 +9,21 @@ import { useState } from "react";
 import useAuthContexts from "../../context/AuthContext";
 import Cookies from 'js-cookie';
 import { Navigate } from "react-router-dom";
+import { Button } from "@nextui-org/react";
 
 const AgentSignIn = () => {
 
   const [error, seterror] = useState("");
   const [registretbox, setopenregistretbox] = useState(false);
   const { authuser, setAuthUser } = useAuthContexts()
+const [loading, setloading] = useState(false)
 
   const apiUrl = import.meta.env.VITE_API_URL;
   const user_token = import.meta.env.VITE_USER_TOKEN;
 
   const onSubmit = async (values, action) => {
     try {
-
+setloading(true)
       const res = await fetch(
         `${apiUrl}auth/agent/login`,
         {
@@ -40,6 +42,8 @@ const AgentSignIn = () => {
       if (data.error) {
         seterror(data.error);
       }
+      setloading(false)
+
 
       if (data.success) {
 
@@ -223,12 +227,12 @@ const AgentSignIn = () => {
             >
               <div className="spinner h-7 w-7 animate-spin rounded-full border-[3px] border-slate-150 border-r-slate-500 dark:border-navy-500 dark:border-r-navy-300 m-4"></div>
             </div>
-            <button
+            <Button isLoading={loading}
               type="submit"
               className="btn mt-10 h-10 w-full bg-primary rounded-md font-medium focus:bg-indigo-700 text-white hover:bg-indigo-700 "
             >
               Sign in
-            </button>
+            </Button>
           </form>
 
           <div className="my-7 flex items-center space-x-3">

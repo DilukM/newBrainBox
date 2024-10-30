@@ -15,33 +15,33 @@ export default function Dasboard() {
   return (
     <div className="w-full  bg-gray-100 p-2 border-e-8 rounded-r-xl border-roseorange">
       <div className="flex gap-3">
-        <ProfileSection name={' rashan'} price={'50000'} />
-        <div className="w-[calc(100%-240px)]  ">
-          <div className="flex xl:max-h-[75px]  w-full  h-full gap-3">
-            <div className="max-w-[500px] w-full">
-              <StudentID studentid={"0000"} />
-            </div>
-            <div className="w-full">
+        <div className="flex flex-col gap-2">
 
-              <CustomerCount count={[
-                {
-                  count: '600',
-                  name: 'School'
-                },
-                {
-                  count: '24521',
-                  name: 'Students'
-                },
-                {
-                  count: '5000',
-                  name: 'Teachers'
-                },
-                {
-                  count: '10000',
-                  name: 'Parants'
-                }
-              ]} />
-            </div>
+          <ProfileSection name={' rashan'} price={'50000'} />
+            <StudentID studentid={"0000"} />
+        </div>
+        <div className="w-[calc(100%-240px)]  ">
+
+          <div className="w-full">
+
+            <CustomerCount count={[
+              {
+                count: '600',
+                name: 'School'
+              },
+              {
+                count: '24521',
+                name: 'Students'
+              },
+              {
+                count: '5000',
+                name: 'Teachers'
+              },
+              {
+                count: '10000',
+                name: 'Parants'
+              }
+            ]} />
           </div>
           <div className="my-3">
             <TopAgent />
@@ -74,30 +74,48 @@ const StudentID = ({ studentid }) => {
 
   return (
 
-    <div className="w-full h-full  flex rounded-lg   pe-3 bg-white shadow-md border-e-5 border-roseorange">
+    <div className="w-full    rounded-lg    bg-white shadow-md border-b-5 border-roseorange">
 
-      <div className="flex w-[550px]  ">
 
-        <div className="bg-roseorange w-fit rounded-l-lg p-5 pe-10 relative 
-            after:absolute  after:h-full after:w-[100px]
-            after:top-0 after:border-t-white
-            
-            
-            after:border-r-[50px] after:border-b-[75px] after:border-l-[40px] 
-            after:border-solid after:border-r-transparent after:border-l-transparent 
-            after:border-b-white
-              text-white text-[26px] after:z-10 font-medium">AGENT ID</div>
-        <div className="w-fit text-black text-[32px] grid place-items-center font-medium z-20"> {studentid}</div>
-      </div>
-      <div className="w-fit grid place-content-center">
+      <div className="bg-roseorange w-full rounded-lg p-5 text-center text-[20px] md:text-[26px] text-white font-medium">AGENT ID   </div>
+      <div className="w-full grid place-content-center my-2">
         <QRCode value={studentid} size={60} />
       </div>
+      <div className="w-full text-black text-[32px] text-center grid place-items-center font-medium z-20"> {studentid}</div>
     </div>
 
 
 
   )
 }
+// const StudentID = ({ studentid }) => {
+
+//   return (
+
+//     <div className="w-full h-full  flex rounded-lg   pe-3 bg-white shadow-md border-e-5 border-roseorange">
+
+//       <div className="w-[550px]  ">
+
+//         <div className="bg-roseorange w-fit rounded-l-lg p-5 pe-10 relative 
+//             after:absolute  after:h-full after:w-[100px]
+//             after:top-0 after:border-t-white
+
+
+//             after:border-r-[50px] after:border-b-[75px] after:border-l-[40px] 
+//             after:border-solid after:border-r-transparent after:border-l-transparent 
+//             after:border-b-white
+//               text-white text-[26px] after:z-10 font-medium">AGENT ID</div>
+//         <div className="w-fit text-black text-[32px] grid place-items-center font-medium z-20"> {studentid}</div>
+//       </div>
+//       <div className="w-fit grid place-content-center">
+//         <QRCode value={studentid} size={60} />
+//       </div>
+//     </div>
+
+
+
+//   )
+// }
 const CustomerCount = ({ count }) => {
   const icon = [
     <FaSchool size={30} />,

@@ -63,7 +63,7 @@ const AgentCourses = () => {
             if (data.he_courses) {
                 sethecourse(data.he_courses)
             }
-            console.log(data)
+            console.log(data.he_courses)
 
 
 
@@ -248,6 +248,8 @@ const SchoolCourser = ({ school }) => {
 }
 
 const CoursesCard = ({ name, img }) => {
+    const IMAGEURL = import.meta.env.VITE_IMAGE_URL;
+
     return (
         <div className="bg-white min-w-[300px] rounded-lg  ">
             <div className="flex justify-center">
@@ -259,7 +261,7 @@ const CoursesCard = ({ name, img }) => {
 
             </div>
             <div className="border-y-2 w-[300px] overflow-hidden h-[250px]">
-                <img src={'http://127.0.0.1:8000/' + img} className="w-[300px] h-[250px] object-cover" />
+                <img src={IMAGEURL + img} className="w-[300px] h-[250px] object-cover" />
 
 
             </div>
@@ -396,7 +398,7 @@ const HigherEducationCoursesCard = ({ name, img, id }) => {
 
             </div>
             <div className="">
-                <img src={vimg} className="w-full h-full object-fill" />
+                <img src={img} className="w-full h-full object-fill" />
 
 
             </div>

@@ -15,12 +15,14 @@ const StudentSignIn = () => {
   const [error, seterror] = useState("");
   const [registretbox, setopenregistretbox] = useState(false);
   const { authuser, setAuthUser } = useAuthContexts()
+  const [loading, setloading] = useState(false)
 
   const apiUrl = import.meta.env.VITE_API_URL;
   const user_token = import.meta.env.VITE_USER_TOKEN;
 
   const onSubmit = async (values, action) => {
     try {
+      setloading(true)
 
       const res = await fetch(
         `${apiUrl}auth/student/login`,
@@ -40,6 +42,7 @@ const StudentSignIn = () => {
       if (data.error) {
         seterror(data.error);
       }
+      setloading(false)
 
       if (data.success) {
 
