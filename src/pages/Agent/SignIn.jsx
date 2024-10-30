@@ -221,12 +221,7 @@ setloading(true)
               </div>
             </div>
 
-            <div
-              id="loadingSpinner"
-              className="w-full flex justify-center items-center hidden"
-            >
-              <div className="spinner h-7 w-7 animate-spin rounded-full border-[3px] border-slate-150 border-r-slate-500 dark:border-navy-500 dark:border-r-navy-300 m-4"></div>
-            </div>
+          
             <Button isLoading={loading}
               type="submit"
               className="btn mt-10 h-10 w-full bg-primary rounded-md font-medium focus:bg-indigo-700 text-white hover:bg-indigo-700 "
