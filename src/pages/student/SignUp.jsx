@@ -333,6 +333,7 @@ const StudentSignUp = () => {
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.grade}
+                placeholder={"Select Grade"}
                 icon={"fa-graduation-cap"}
               />
               {formik.errors.grade && formik.touched.grade ? (
@@ -379,13 +380,14 @@ const StudentSignUp = () => {
               ) : (
                 ""
               )}
-              {/* <!-- Gende4 Code Field --> */}
+              {/* <!-- Gender Code Field --> */}
 
               <Cdropdown
                 name={"gender"}
                 options={gender}
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
+                placeholder={"Select Gender"}
                 value={formik.values.gender}
                 icon={"fa-genderless"}
               />
@@ -571,7 +573,7 @@ const PaymentBox = ({ setopenpaymentbox }) => {
   );
 };
 
-const Cdropdown = ({ name, icon, options, onBlur, onChange, value }) => {
+const Cdropdown = ({ name, icon, options, onBlur, onChange, value, placeholder }) => {
   return (
     <div className=" mt-3">
       <label className="relative flex">
@@ -580,7 +582,7 @@ const Cdropdown = ({ name, icon, options, onBlur, onChange, value }) => {
           onBlur={onBlur}
           value={value}
           onChange={onChange}>
-          <option value="" disabled selected>Select Grade</option>  {options.map((item, index) => (
+          <option value="" disabled selected>{placeholder}</option>  {options.map((item, index) => (
             <option key={index} value={item.id}>{item.name}</option>
           ))}
         </select>
