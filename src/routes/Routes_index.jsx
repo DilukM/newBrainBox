@@ -123,7 +123,7 @@ const RoutesIndex = () => {
       </Route>
 
       <Route path="/404" element={<NotFound />} />
-      {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
+      <Route path="*" element={<Navigate to="/404" replace />} />
     </Routes>
   );
 };
