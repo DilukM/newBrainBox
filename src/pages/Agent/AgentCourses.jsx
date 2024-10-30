@@ -260,11 +260,11 @@ const CoursesCard = ({ name, img }) => {
 
 
             </div>
-            <div className="border-y-2 w-[300px] overflow-hidden h-[250px]">
-                <img src={IMAGEURL + img} className="w-[300px] h-[250px] object-cover" />
+                <div className="border-y-2 w-[300px] overflow-hidden h-[250px]">
+                    <img src={IMAGEURL + img} className="w-[300px] h-[250px] object-cover" />
 
 
-            </div>
+                </div>
 
             <div className="p-3 flex justify-between py-2 text-[14px]">
                 <div className="flex w-full  items-center md:justify-center">
@@ -387,6 +387,8 @@ const HigherEducationCourses = ({ hecourse }) => {
 }
 
 const HigherEducationCoursesCard = ({ name, img, id }) => {
+    const IMAGEURL = import.meta.env.VITE_IMAGE_URL;
+
     return (
         <div className="bg-white min-w-[300px] rounded-lg  ">
             <div className="flex justify-center">
@@ -397,11 +399,12 @@ const HigherEducationCoursesCard = ({ name, img, id }) => {
 
 
             </div>
-            <div className="">
-                <img src={img} className="w-full h-full object-fill" />
+            <div className="border-y-2 w-[300px] overflow-hidden h-[250px]">
+                <img src={IMAGEURL + img} className="w-[300px] h-[250px] object-cover" />
 
 
             </div>
+
 
             <div className="p-3 flex justify-between py-2 ">
 
@@ -469,7 +472,7 @@ const FreeCourses = ({ freecourses }) => {
                                 <div className="flex max-w-[1500px]  mb-3 w-full gap-x-2 ">
 
                                     {freecourses.map((item, index) =>
-                                        <FreeCoursesCard key={index} name={item.course_name} imag={item.image_url} type={'Employee'} />
+                                        <FreeCoursesCard key={index} name={item.course_name} imag={item.video_url} type={'Employee'} />
 
                                     )}
 
@@ -514,6 +517,8 @@ const FreeCourses = ({ freecourses }) => {
 }
 
 const FreeCoursesCard = ({ name, img, id }) => {
+    const IMAGEURL = import.meta.env.VITE_IMAGE_URL;
+
     return (
         <div className="bg-white min-w-[300px] rounded-lg  ">
             <div className="flex justify-center">
@@ -524,8 +529,8 @@ const FreeCoursesCard = ({ name, img, id }) => {
 
 
             </div>
-            <div className="">
-                <img src={vimg} className="w-full h-full object-fill" />
+            <div className="border-y-2 w-[300px] overflow-hidden h-[250px]">
+                <img src={IMAGEURL + img} className="w-[300px] h-[250px] object-cover" />
 
 
             </div>

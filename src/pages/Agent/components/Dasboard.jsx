@@ -5,54 +5,94 @@ import { Avatar } from "@nextui-org/react"
 import { FaSchool, FaUsers } from "react-icons/fa"
 import { FaLocationDot, FaUsersLine } from "react-icons/fa6"
 import QRCode from "react-qr-code"
+import useWindowSize from '../../../hooks/useWindowSize';
 
 
 
 export default function Dasboard() {
+  const size= useWindowSize();
 
 
 
   return (
+    size.width <=500 ?
     <div className="w-full  bg-gray-100 p-2 border-e-8 rounded-r-xl border-roseorange">
-      <div className="flex gap-3">
-        <div className="flex flex-col gap-2">
+      <div className="flex h-full gap-3">
+        <div className="flex flex-col  gap-2">
 
-          <ProfileSection name={' rashan'} price={'50000'} />
-            <StudentID studentid={"0000"} />
+          <ProfileSection name={'rashan'} price={'50000'} />
+            <StudentID studentid={"BA-0002"} />
         </div>
-        <div className="w-[calc(100%-240px)]  ">
+        <div className="w-full flex  h-full">
 
-          <div className="w-full">
-
-            <CustomerCount count={[
-              {
-                count: '600',
-                name: 'School'
-              },
-              {
-                count: '24521',
-                name: 'Students'
-              },
-              {
-                count: '5000',
-                name: 'Teachers'
-              },
-              {
-                count: '10000',
-                name: 'Parants'
-              }
-            ]} />
+          <div className="w-full h-full">
+              <CustomerCount count={[
+                {
+                  count: '136',
+                  name: 'School'
+                },
+                {
+                  count: '2521',
+                  name: 'Students'
+                },
+                {
+                  count: '861',
+                  name: 'Teachers'
+                },
+                {
+                  count: '3896',
+                  name: 'Parants'
+                }
+              ]} />
           </div>
-          <div className="my-3">
-            <TopAgent />
-          </div>
+          
         </div>
       </div>
       <div className="flex">
 
       </div>
 
-    </div>
+      </div> :
+      <div className="w-full  bg-gray-100 p-2 border-e-8 rounded-r-xl border-roseorange">
+        <div className="flex gap-3">
+          <div className="flex flex-col gap-2">
+
+            <ProfileSection name={'rashan'} price={'50000'} />
+            <StudentID studentid={"BA-0002"} />
+          </div>
+          <div className="w-[calc(100%-240px)]  ">
+
+            <div className="w-full">
+
+              <CustomerCount count={[
+                {
+                  count: '136',
+                  name: 'School'
+                },
+                {
+                  count: '2521',
+                  name: 'Students'
+                },
+                {
+                  count: '861',
+                  name: 'Teachers'
+                },
+                {
+                  count: '3896',
+                  name: 'Parants'
+                }
+              ]} />
+            </div>
+            <div className="my-3">
+              <TopAgent />
+            </div>
+          </div>
+        </div>
+        <div className="flex">
+
+        </div>
+
+      </div>
   )
 }
 const ProfileSection = ({ name, }) => {
@@ -61,7 +101,7 @@ const ProfileSection = ({ name, }) => {
 
     <div className="bg-white sm:max-w-[350px] rounded-xl py-4 shadow-lg h-full flex flex-col min-w-fit  justify-center items-center    px-8">
       <div className="mask mask-squircle  ">
-        <Avatar squircle src="https://i.pravatar.cc/150?u=a04258a2462d826712d" className="rounded-[30px]  w-[170px] h-[170px]" />
+        <Avatar squircle src="https://i.pravatar.cc/150?u=a04258a2462d826712d" className="rounded-[30px]  w-[120px] h-[120px]" />
       </div>
       <h3 className="text-center font-semibold mt-3 text-[22px] text-darkblue">{name}</h3>
 
@@ -77,11 +117,11 @@ const StudentID = ({ studentid }) => {
     <div className="w-full    rounded-lg    bg-white shadow-md border-b-5 border-roseorange">
 
 
-      <div className="bg-roseorange w-full rounded-lg p-5 text-center text-[20px] md:text-[26px] text-white font-medium">AGENT ID   </div>
+      <div className="bg-roseorange w-full rounded-lg p-5 text-center text-[16px] md:text-[26px] text-white font-medium">AGENT ID   </div>
       <div className="w-full grid place-content-center my-2">
         <QRCode value={studentid} size={60} />
       </div>
-      <div className="w-full text-black text-[32px] text-center grid place-items-center font-medium z-20"> {studentid}</div>
+      <div className="w-full text-black text-[18px] text-center grid place-items-center font-medium z-20"> {studentid}</div>
     </div>
 
 
@@ -119,11 +159,13 @@ const StudentID = ({ studentid }) => {
 const CustomerCount = ({ count }) => {
   const icon = [
     <FaSchool size={30} />,
+    <FaUsers size={30} />,
+    <FaUsers size={30} />,
     <FaUsers size={30} />
 
   ]
   return (
-    <div className="flex  w-full h-fit  flex-col sm:flex-row gap-2  justify-around  ">
+    <div className="flex  w-full h-full   flex-col sm:flex-row gap-2   justify-around  ">
       {count.map((item, index) =>
 
         <div key={index} className="w-full  sm:max-w-[200px]">

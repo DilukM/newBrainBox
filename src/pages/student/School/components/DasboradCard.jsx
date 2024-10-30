@@ -38,19 +38,19 @@ const DasboradCard = ({ authuser }) => {
                             <ProjectStatus />
                             <CustomerCount count={[
                                 {
-                                    count: '600',
+                                    count: '136',
                                     name: 'School'
                                 },
                                 {
-                                    count: '24521',
+                                    count: '2521',
                                     name: 'Students'
                                 },
                                 {
-                                    count: '5000',
+                                    count: '861',
                                     name: 'Teachers'
                                 },
                                 {
-                                    count: '10000',
+                                    count: '3896',
                                     name: 'Parants'
                                 }
                             ]} />
