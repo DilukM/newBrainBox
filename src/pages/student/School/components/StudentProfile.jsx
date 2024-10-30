@@ -3,10 +3,15 @@
 /* eslint-disable react/prop-types */
 import { Button, DatePicker, Input, Select, SelectItem } from "@nextui-org/react";
 import Cookies from 'js-cookie';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { parseDate, getLocalTimeZone } from "@internationalized/date";
 
 const StudentProfile = () => {
+    const profile = useRef();
+
+    useEffect(() => {
+        profile.current.scrollIntoView({ behavior: 'smooth' });
+    }, []);
 
     const [id, setid] = useState();
     const [fname, setfname] = useState("");
@@ -19,7 +24,6 @@ const StudentProfile = () => {
     const [grade, setgrade] = useState("");
     const [email, setemail] = useState("");
     const [loading, setloading] = useState(false)
-
     const [zipcode, setzipcode] = useState()
     const [nameCertificate, setnameCertificate] = useState()
     const [genderid, setgenderid] = useState()
@@ -126,10 +130,10 @@ const StudentProfile = () => {
 
 
     return (
-        <div className="flex">
+        <div className="flex" ref={profile}>
 
 
-            <section className="flex" id="profile">
+            <section className="flex" >
 
 
                 <div className="flex  w-full  flex-wrap">

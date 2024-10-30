@@ -1,11 +1,11 @@
 import {Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "../pages/404/NotFound";
-import StudentRecordings from "../pages/student/school/StudentRecordings";
-import StudenSubscribe from "../pages/student/school/StudenSubscribe";
+import StudentRecordings from "../pages/student/School/StudentRecordings";
+import StudenSubscribe from "../pages/student/School/StudenSubscribe";
 import FreeCourses from "../pages/student/School/FreeCourses";
 import StudentExamAssessment from "../pages/student/School/StudentExamAssessment";
 import StudentPayment from "../pages/student/School/components/payments/StudentPayment";
-import StudentProfile from "../pages/student/school/components/StudentProfile";
+import StudentProfile from "../pages/student/School/components/StudentProfile";
 import StudentHome from "../pages/student/School/StudentHome";
 import HECourses from "../pages/student/School/HECourses";
 

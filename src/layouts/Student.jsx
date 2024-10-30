@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import DasboradCard from '../pages/student/school/components/DasboradCard';
+import DasboradCard from '../pages/student/School/components/DasboradCard';
 import StudentLeftBar from '../pages/student/School/components/StudentLeftBar';
 import StudentTopBar from '../pages/student/School/components/StudentTopBar';
 

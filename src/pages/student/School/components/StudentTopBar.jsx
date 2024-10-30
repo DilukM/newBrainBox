@@ -45,7 +45,7 @@ const StudentTopBar1 = () => {
                             <div className="bg-white mt-3 ">
                                 <div className="flex justify-end pe-2"><TiArrowSortedUp size={20}/></div>
                                 <ul className="py-2 ">
-                                    <li className="px-8"><Link to={'profile#profile'} className="flex gap-x-3 items-center py-1" ><FaUserCircle />Profile</Link></li>
+                                    <li className="px-8"><Link to={'profile/#profile'} className="flex gap-x-3 items-center py-1" ><FaUserCircle />Profile</Link></li>
                                     <li className="px-8"><Link to={'profile'} className="flex gap-x-3 items-center py-1" ><FaMessage />Messages</Link></li>
                                     <li className="px-8"><Link to={'profile'} className="flex gap-x-3 items-center py-1" ><FaCartPlus />Cart</Link></li>
                                     <li className="mt-3 border-t-2 pt-1 px-8"><Link to={'profile'} className="flex gap-x-3 items-center py-1"><IoKeySharp />Log Out</Link></li>
