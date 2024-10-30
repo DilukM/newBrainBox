@@ -72,6 +72,7 @@ const Left = () => {
         // {
 
 
+
         //     icon: <MdPayments color="gray" size={20} />,
         //     name: 'Payments',
         //     url: 'payments',
@@ -100,7 +101,7 @@ const Left = () => {
                     <div className="flex flex-col mt-5  gap-2">
 
                         {item.map((item, index) =>
-                            <Link key={index} to={`${item.url}`} className="cursor-pointer" onClick={() => setopen(!open)}>
+                            <Link key={index} to={`${item.url}`} className="cursor-pointer" onClick={() => setopen(!open)} >
 
 
                                 <div className={`flex gap-2 py-2 mt5 items-center px-1 ${pathname == item.urlname ? ' border-roseorange border-r-5   bg-gray-200/80  ' : ' bg-white'}  rounded-lg`}>
