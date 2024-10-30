@@ -5,7 +5,7 @@ import useAuthContexts from "../context/AuthContext";
 import Agent from "../layouts/Agent";
 import StudentSignUp from "../pages/student/SignUp";
 import StudentSignIn from "../pages/student/SignIn";
-import AgentSignIn from "../pages/Agent/SignIn.jsx";
+import AgentSignIn from "../pages/Agent/SignIn";
 import AgentSignUp from "../pages/Agent/SignUp";
 
 const RoutesIndex = () => {
