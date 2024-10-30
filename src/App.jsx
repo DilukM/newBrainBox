@@ -1,19 +1,11 @@
-import RoutesIndex from "./routes/Routes_index"
-import Loading from './pages/PageLoading/loading'
-import useAuthContexts from "./context/AuthContext"
+import RoutesIndex from "./routes/Routes_index";
+import Loading from "./pages/PageLoading/loading";
+import useAuthContexts from "./context/AuthContext";
 
 function App() {
   const { loading } = useAuthContexts();
 
-  return (
-      loading?
-        <Loading/>
-      :
-  
-      <RoutesIndex />
-
-
-  )
+  return loading ? <Loading /> : <RoutesIndex />;
 }
 
-export default App
+export default App;
