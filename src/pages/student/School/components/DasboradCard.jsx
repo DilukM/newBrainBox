@@ -21,7 +21,7 @@ const DasboradCard = ({ authuser }) => {
 
             {size.width <= 639 ?
                 <div className="flex flex-col gap-2 w-full">
-                    <div className="flex w-full flex-col sm:flex-row  justify-around">
+                    <div className="flex w-full flex-col sm:flex-row gap-2 justify-around">
                         <ProfileSection name={authuser.user.username} price={'000'}  />
                         <StudentID studentid={authuser.id}  />
 
