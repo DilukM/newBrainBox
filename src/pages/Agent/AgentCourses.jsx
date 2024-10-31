@@ -54,6 +54,7 @@ const AgentCourses = () => {
                 }
             );
             const data = await res.json();
+            console.log(data)
             if (data.school_sylabus) {
                 setschool(data.school_sylabus)
             }
@@ -341,8 +342,10 @@ const HigherEducationCourses = ({ hecourse }) => {
                             <div className="overflow-x-scroll w-fit  customescroll">
 
                                 <div className="flex max-w-[1500px]  mb-3 w-full gap-x-2 ">
+                                    
                                     {hecourse.map((item, index) =>
-                                        <HigherEducationCoursesCard key={index} name={item.course_name} imag={item.image_url} type={'Employee'} />
+                                    
+                                        <HigherEducationCoursesCard key={index} name={item.course_name} img={item.image_url} type={'Employee'} />
 
                                     )}
 
@@ -350,7 +353,7 @@ const HigherEducationCourses = ({ hecourse }) => {
 
                                 <div className="flex max-w-[1500px] w-full gap-x-2 ">
                                     {hecourse.map((item, index) =>
-                                        <HigherEducationCoursesCard key={index} name={item.course_name} imag={item.image_url} type={'Employee'} />
+                                        <HigherEducationCoursesCard key={index} name={item.course_name} img={item.image_url} type={'Employee'} />
 
                                     )}
 
@@ -361,7 +364,7 @@ const HigherEducationCourses = ({ hecourse }) => {
                             <div className="flex max-w-[1500px] w-full gap-x-2 overflow-x-scroll customescroll">
 
                                 {hecourse.map((item, index) =>
-                                    <HigherEducationCoursesCard key={index} name={item.course_name} imag={item.image_url} type={'Employee'} />
+                                    <HigherEducationCoursesCard key={index} name={item.course_name} img={item.image_url} type={'Employee'} />
 
                                 )}
                             </div>
@@ -472,7 +475,7 @@ const FreeCourses = ({ freecourses }) => {
                                 <div className="flex max-w-[1500px]  mb-3 w-full gap-x-2 ">
 
                                     {freecourses.map((item, index) =>
-                                        <FreeCoursesCard key={index} name={item.course_name} imag={item.video_url} type={'Employee'} />
+                                        <FreeCoursesCard key={index} name={item.course_name} img={item.video_url} type={'Employee'} />
 
                                     )}
 
@@ -480,7 +483,7 @@ const FreeCourses = ({ freecourses }) => {
 
                                 <div className="flex max-w-[1500px] w-full gap-x-2 ">
                                     {freecourses.map((item, index) =>
-                                        <FreeCoursesCard key={index} name={item.course_name} imag={item.image_url} type={'Employee'} />
+                                        <FreeCoursesCard key={index} name={item.course_name} img={item.video_url} type={'Employee'} />
 
                                     )}
 
@@ -490,7 +493,7 @@ const FreeCourses = ({ freecourses }) => {
                             :
                             <div className="flex max-w-[1500px] w-full gap-x-2 overflow-x-scroll customescroll">
                                 {freecourses.map((item, index) =>
-                                    <FreeCoursesCard key={index} name={item.course_name} imag={item.image_url} type={'Employee'} />
+                                    <FreeCoursesCard key={index} name={item.course_name} img={item.video_url} type={'Employee'} />
 
                                 )}
 
